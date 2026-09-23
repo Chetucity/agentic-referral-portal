@@ -1,0 +1,104 @@
+WHERE EACH FILE GOES IN PLAY CONSOLE
+Page: Grow → Store presence → Main store listing → Default store listing
+
+────────────────────────────────────────────────────────────────
+COMMON VISUAL ASSETS
+────────────────────────────────────────────────────────────────
+App icon *              app-icon-512.png
+                        512 × 512 PNG, opaque, full-bleed. Play applies its
+                        own rounded mask, so don't round the corners yourself.
+
+Feature graphic *       feature-graphic-1024x500.png
+                        1024 × 500 PNG, opaque.
+
+Video                   Leave empty. Optional, and a bad video hurts more
+                        than no video.
+
+────────────────────────────────────────────────────────────────
+PHONE ASSETS
+────────────────────────────────────────────────────────────────
+Phone screenshots *     All 8 files in phone-screenshots/
+                        1080 × 1920 each (9:16). Upload them in filename
+                        order — they read as a story:
+
+                          01  The pitch: see who can refer you
+                          02  Every opening, and how many can refer into it
+                          03  The actual people who said yes to referring
+                          04  The pipeline, timestamped, end to end
+                          05  Every request you've made, in one place
+                          06  Build an ATS-scored resume without leaving
+                          07  Referrers get a real inbox, not a DM
+                          08  Recruiters see one pipeline for the company
+
+                        Play only requires 2, but 4+ at 1080 px or more makes
+                        the app eligible for promotion, so upload all 8.
+
+                        Shot 03 is the one that explains the product. If you
+                        only reorder one thing, keep that one high.
+
+────────────────────────────────────────────────────────────────
+TABLET ASSETS
+────────────────────────────────────────────────────────────────
+7-inch tablet           All 8 files in tablet-screenshots/
+screenshots *           1440 × 2560 each. Meets the 7-inch rule
+                        (sides 320–3,840 px).
+
+10-inch tablet          The same 8 files from tablet-screenshots/
+screenshots *           Also meets the 10-inch rule (sides 1,080–7,680 px),
+                        so upload the identical set to both boxes.
+
+                        These are real captures at a tablet width, not
+                        stretched phone shots — the layout genuinely goes
+                        multi-column.
+
+────────────────────────────────────────────────────────────────
+CHROMEBOOK ASSETS / ANDROID XR ASSETS
+────────────────────────────────────────────────────────────────
+Skip both. Neither is required.
+
+────────────────────────────────────────────────────────────────
+TEXT FIELDS
+────────────────────────────────────────────────────────────────
+App name, short description, full description, category, tags and contact
+details are in store-listing-copy.txt. They sit in the "App details" section
+of the same listing, above the visual assets — scroll up from where the
+screenshots start.
+
+That file also contains the Data safety answers, which are a *separate*
+section (App content → Data safety), and the content-rating / target-audience
+answers Play asks for before you can publish.
+
+────────────────────────────────────────────────────────────────
+REGENERATING ANY OF THIS
+────────────────────────────────────────────────────────────────
+Nothing here was exported by hand, so nothing goes stale silently:
+
+  npm run icons                                  app icons + the mark
+  node scripts/generate-feature-graphic.mjs      feature graphic + store icon
+  BASE_URL=<running app> \
+    node scripts/capture-store-screenshots.mjs   all 16 screenshots
+
+Run the screenshots against a freshly seeded database (npm run db:seed), or
+the shots will contain whatever test data happens to be lying around.
+
+────────────────────────────────────────────────────────────────
+BEFORE YOU SUBMIT
+────────────────────────────────────────────────────────────────
+1. Run the readiness check against the real deployment, not localhost:
+
+     BASE_URL=https://<your-domain> node scripts/playstore-smoke.mjs
+
+   It fails on anything that gets a submission rejected, and warns when
+   Digital Asset Links is missing or lists only one fingerprint.
+
+2. Read PLAYSTORE.md in the repo root. The fingerprint step is the one that
+   goes wrong, and it goes wrong *after* you publish, which is the expensive
+   time to find out.
+
+────────────────────────────────────────────────────────────────
+AFTER YOU SAVE
+────────────────────────────────────────────────────────────────
+Saving the store listing is what unlocks Countries / regions. Go to
+Test and release → Testing → Internal testing → Countries / regions and add
+India (or wherever else you want testers). An empty setting there is why a
+new app shows "Item not found" for everyone, including you.

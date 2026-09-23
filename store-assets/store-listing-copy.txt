@@ -1,0 +1,165 @@
+REFERIN — PLAY STORE LISTING COPY
+Paste these into: Grow → Store presence → Main store listing → Default store listing
+
+════════════════════════════════════════════════════════════════
+APP NAME                                            (max 30 chars)
+════════════════════════════════════════════════════════════════
+ReferIn: Job Referrals Tracked
+                                                    [30 characters]
+
+  Alternatives if that reads long on a phone:
+    ReferIn — Job Referrals         (31 — too long, don't use)
+    ReferIn: Referral Job Search    (28)
+    ReferIn                         (7, cleanest, weakest for search)
+
+
+════════════════════════════════════════════════════════════════
+SHORT DESCRIPTION                                   (max 80 chars)
+════════════════════════════════════════════════════════════════
+See who inside a company can refer you — and track it from request to hired.
+                                                    [76 characters]
+
+
+════════════════════════════════════════════════════════════════
+FULL DESCRIPTION                                  (max 4,000 chars)
+════════════════════════════════════════════════════════════════
+Job boards show you a listing and then silence. ReferIn shows you the people
+inside the company who can actually put your name forward — and gives you a
+status you can check, from the moment you ask to the moment you're hired.
+
+WHY REFERRALS
+A referred candidate is far more likely to reach an interview than someone who
+applies cold. Most people know this. What they don't have is a way to find the
+right person inside the company, ask them properly, and know what happened
+next. That's the gap ReferIn closes.
+
+FOR JOB SEEKERS
+• Browse openings and filter by role, location and work mode
+• See exactly who at that company has opted in to referring — their team, their
+  title, how long they've been there, and how many referrals they've made
+• Ask a named person directly, with a note explaining why you fit
+• Build an ATS-scored resume inside the app and attach it to your request
+• Track every referral through a visible pipeline: Requested → Accepted →
+  Referred → Interviewing → Hired
+• Get notified the moment anything changes. No more chasing.
+
+FOR EMPLOYEES WHO REFER
+• Turn on "open to refer" and appear on your company's openings
+• Receive requests in a real inbox, with the candidate's note and resume
+  already attached
+• Accept or decline with a reason, then mark someone as formally referred
+• See your own track record — how many you've put forward, how many were hired
+
+FOR RECRUITERS
+• Post, pause and close openings, with live seat counts
+• See every referral into your company in one pipeline instead of across email
+  threads and spreadsheets
+• Move candidates through interview to hired or rejected
+• Manage your company profile and the team who can refer into it
+
+THE RESUME BUILDER
+Build a resume without leaving the app. Score it against a rule-based ATS model
+out of 100, get live writing feedback on weak phrasing and passive voice, match
+it against a job description, and export to PDF, Word or PNG. Or upload an
+existing resume and improve it. Everything you build is yours, private by
+default, and attachable to a referral in one tap.
+
+BUILT ON A CLEAR IDEA
+Every status change is timestamped and written to a permanent history, so the
+candidate, the referrer and the recruiter all read the same truth. A job seeker
+can never move their own referral forward — that would defeat the point. What
+you see is what actually happened.
+
+PRIVACY
+Your resume stays private until you attach it to a referral, and then only the
+person you asked and that company's recruiters can read it. We don't sell your
+data and we don't show ads. You can delete your account, and everything in it,
+from inside the app at any time.
+
+Free to use.
+
+                                    [approximately 2,650 characters]
+
+
+════════════════════════════════════════════════════════════════
+CATEGORY AND TAGS
+════════════════════════════════════════════════════════════════
+App category            Business
+                        (Alternative: Productivity. Business is the better fit
+                        — Play's own "Jobs" listings sit there.)
+
+Tags (choose up to 5)   Job Search
+                        Career
+                        Recruitment
+                        Resume
+                        Networking
+
+
+════════════════════════════════════════════════════════════════
+CONTACT DETAILS
+════════════════════════════════════════════════════════════════
+Email                   nirmata@koshcloud.com
+Phone                   +91 95600 84806
+Website                 https://<your-domain>
+Privacy policy URL      https://<your-domain>/legal/privacy
+
+  ⚠ Check these against src/lib/legal.ts before submitting. They were carried
+    over from the Personalise listing; you may want an address dedicated to
+    this product.
+
+
+════════════════════════════════════════════════════════════════
+DATA SAFETY FORM
+════════════════════════════════════════════════════════════════
+This is a separate section (App content → Data safety) and it must agree with
+what /legal/privacy says. For ReferIn:
+
+Data collected, linked to the user:
+  • Personal info    — name, email address
+  • Personal info    — other (profile: headline, location, skills, bio, links)
+  • Personal info    — other (resumes the user builds)
+  • App activity     — other (referral requests, status history, notifications)
+
+Data NOT collected:
+  • Location, contacts, photos, files, messages, calendar, health, financial
+  • Advertising ID, device identifiers for tracking
+
+For every type declared, answer:
+  Collected?                  Yes
+  Shared with third parties?  No
+  Processing is optional?     No (required for the app to work)
+  Purpose                     App functionality; Account management
+
+Security practices:
+  Data is encrypted in transit                        Yes
+  Users can request that data be deleted              Yes
+  Account deletion URL      https://<your-domain>/account/delete
+
+Committed to Play Families Policy?                    No
+Independent security review?                          No
+
+
+════════════════════════════════════════════════════════════════
+OTHER ANSWERS PLAY WILL ASK FOR
+════════════════════════════════════════════════════════════════
+Target audience         18 and over.
+                        Choosing 13+ pulls in the Families policy, which is a
+                        substantial amount of extra work and is not what this
+                        app is for.
+
+Content rating          Complete the questionnaire honestly. This is a business
+                        app with user accounts, user-to-user messaging limited
+                        to referral notes, and no public user-generated content.
+                        Expect "Everyone" / PEGI 3.
+
+Ads                     No, this app does not contain ads.
+
+In-app purchases        No.
+
+Government app          No.
+
+Financial features      None.
+
+News app                No.
+
+COVID-19 app            No.
