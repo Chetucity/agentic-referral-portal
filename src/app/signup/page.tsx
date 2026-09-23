@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/session";
 import { SignupForm } from "./SignupForm";
-import { ROLES, ROLE_LABEL, ROLE_BLURB, type Role } from "@/lib/constants";
+import { SELF_SERVE_ROLES, ROLE_LABEL, ROLE_BLURB, type Role } from "@/lib/constants";
 
 export const metadata = { title: "Create an account — ReferIn" };
 
@@ -14,7 +14,7 @@ export default async function SignupPage({
   if (await getCurrentUser()) redirect("/dashboard");
 
   const { role } = await searchParams;
-  const initialRole = (ROLES as readonly string[]).includes(role ?? "")
+  const initialRole = (SELF_SERVE_ROLES as readonly string[]).includes(role ?? "")
     ? (role as Role)
     : "SEEKER";
 
@@ -34,7 +34,7 @@ export default async function SignupPage({
 
       <SignupForm
         initialRole={initialRole}
-        roles={ROLES.map((r) => ({
+        roles={SELF_SERVE_ROLES.map((r) => ({
           value: r,
           label: ROLE_LABEL[r],
           blurb: ROLE_BLURB[r],

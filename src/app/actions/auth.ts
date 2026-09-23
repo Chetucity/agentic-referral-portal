@@ -9,7 +9,7 @@ import { users, companies, companyMembers } from "@/db/schema";
 import { hashPassword, verifyPassword } from "@/lib/password";
 import { createSession, destroySession, getCurrentUser } from "@/lib/session";
 import { newId, slugify, colorFor } from "@/lib/utils";
-import { ROLES } from "@/lib/constants";
+import { SELF_SERVE_ROLES } from "@/lib/constants";
 
 export type FormState = { error?: string; ok?: boolean } | null;
 
@@ -22,7 +22,8 @@ const signupSchema = z
     name: z.string().trim().min(2, "Please enter your full name."),
     email: z.string().trim().toLowerCase().email("Enter a valid email."),
     password: z.string().min(8, "Password must be at least 8 characters."),
-    role: z.enum(ROLES),
+    // Never trust a client-submitted "ADMIN" — see SELF_SERVE_ROLES.
+    role: z.enum(SELF_SERVE_ROLES),
     headline: z.string().trim().optional(),
     location: z.string().trim().optional(),
     skills: z.string().trim().optional(),
@@ -38,7 +39,6 @@ const signupSchema = z
   .refine(
     (d) =>
       d.role === "SEEKER" ||
-      d.role === "ADMIN" ||
       (d.companyName && d.companyName.length > 1),
     { message: "Company name is required.", path: ["companyName"] },
   );

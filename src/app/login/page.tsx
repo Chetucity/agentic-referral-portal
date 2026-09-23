@@ -19,30 +19,32 @@ export default async function LoginPage() {
           who is waiting on you.
         </p>
 
-        <div className="mt-8 card p-5">
-          <div className="text-sm font-semibold text-slate-800">
-            Demo accounts
+        {process.env.NODE_ENV !== "production" && (
+          <div className="mt-8 card p-5">
+            <div className="text-sm font-semibold text-slate-800">
+              Demo accounts
+            </div>
+            <p className="mt-1 text-xs text-slate-500">
+              Every seeded account uses the password{" "}
+              <code className="rounded bg-slate-100 px-1 py-0.5">password123</code>
+            </p>
+            <ul className="mt-3 space-y-2 text-sm">
+              {[
+                ["aisha@example.com", "Job seeker — has referrals at 4 stages"],
+                ["rohan@nimbus.io", "Employee at Nimbus — has an inbox of requests"],
+                ["priya@nimbus.io", "Recruiter at Nimbus — manages postings"],
+                ["admin@referin.app", "Platform admin"],
+              ].map(([email, desc]) => (
+                <li key={email} className="flex flex-col">
+                  <code className="text-xs font-medium text-brand-700">
+                    {email}
+                  </code>
+                  <span className="text-xs text-slate-500">{desc}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <p className="mt-1 text-xs text-slate-500">
-            Every seeded account uses the password{" "}
-            <code className="rounded bg-slate-100 px-1 py-0.5">password123</code>
-          </p>
-          <ul className="mt-3 space-y-2 text-sm">
-            {[
-              ["aisha@example.com", "Job seeker — has referrals at 4 stages"],
-              ["rohan@nimbus.io", "Employee at Nimbus — has an inbox of requests"],
-              ["priya@nimbus.io", "Recruiter at Nimbus — manages postings"],
-              ["admin@referin.app", "Platform admin"],
-            ].map(([email, desc]) => (
-              <li key={email} className="flex flex-col">
-                <code className="text-xs font-medium text-brand-700">
-                  {email}
-                </code>
-                <span className="text-xs text-slate-500">{desc}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        )}
       </div>
 
       <div className="card mx-auto w-full max-w-md p-6 sm:p-8">

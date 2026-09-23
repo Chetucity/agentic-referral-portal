@@ -17,6 +17,16 @@ export const ROLE_BLURB: Record<Role, string> = {
   ADMIN: "Verify companies and keep an eye on the platform.",
 };
 
+/**
+ * Roles the public signup form is allowed to hand out. ADMIN is deliberately
+ * excluded — it must never be assignable through self-registration. Granting
+ * it is an out-of-band action (an operator updating the DB directly), not a
+ * checkbox on the signup page.
+ */
+export const SELF_SERVE_ROLES = ROLES.filter(
+  (r): r is Exclude<Role, "ADMIN"> => r !== "ADMIN",
+);
+
 /* -------------------------------------------------------------------------- */
 /* Referral pipeline                                                          */
 /* -------------------------------------------------------------------------- */
