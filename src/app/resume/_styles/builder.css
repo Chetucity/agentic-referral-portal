@@ -6,7 +6,7 @@
 .rb, .rb::before, .rb::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 /* ═══════════════════════════════════════════════════════════
-   Design tokens — dark
+   Design tokens — light
 
    Surfaces step up in lightness as they come forward: canvas →
    panel → control → hover. Borders are hairlines that separate
@@ -18,57 +18,48 @@
    paper sitting on the canvas.
    ═══════════════════════════════════════════════════════════ */
 .rb {
-  /* Surfaces — sampled directly from thechetansharma.com */
-  --bg:            #05060c;
-  --bg-grad:       radial-gradient(1100px 560px at 50% -12%, #0d1020 0%, #05060c 62%);
-  --panel:         #090b14;
-  --panel-hi:      #0d1020;
-  --control:       #141830;
-  --control-hi:    #1b2140;
-  --inset:         #070810;
+  /* Surfaces — light theme */
+  --bg:            #f5f7fa;
+  --bg-grad:       linear-gradient(180deg, #ffffff 0%, #f0f2f5 100%);
+  --panel:         #ffffff;
+  --panel-hi:      #f8f9fb;
+  --control:       #eef0f4;
+  --control-hi:    #e4e7ed;
+  --inset:         #f3f4f7;
 
   /* Lines */
-  --border:        #1a1f38;
-  --border-hi:     #262c4a;
-  --border-focus:  #2f7d63;
+  --border:        #e2e5eb;
+  --border-hi:     #d0d4dc;
+  --border-focus:  #2f9e74;
 
-  /* Type — the site's exact ramp */
-  --text:          #eef0f7;
-  --text-dim:      #b7bacb;
-  --text-mute:     #8286a0;
-  --text-faint:    #6d7194;
+  /* Type */
+  --text:          #111827;
+  --text-dim:      #374151;
+  --text-mute:     #6b7280;
+  --text-faint:    #9ca3af;
 
   /* Accent — the brand emerald */
-  --accent:        #34d399;
-  --accent-hi:     #5ee9b5;
-  --accent-dim:    #1f9d74;
-  --accent-soft:   rgba(52, 211, 153, .11);
-  --accent-line:   rgba(52, 211, 153, .30);
-  --accent-ring:   0 0 0 3px rgba(52, 211, 153, .16);
+  --accent:        #059669;
+  --accent-hi:     #047857;
+  --accent-dim:    #10b981;
+  --accent-soft:   rgba(5, 150, 105, .08);
+  --accent-line:   rgba(5, 150, 105, .25);
+  --accent-ring:   0 0 0 3px rgba(5, 150, 105, .12);
 
-  /* Status — the site's amber, plus a rose that sits with it */
-  --green:         #34d399;
-  --green-bg:      rgba(52, 211, 153, .10);
-  --green-line:    rgba(52, 211, 153, .28);
-  --amber:         #f6c454;
-  --amber-bg:      rgba(246, 196, 84, .10);
-  --amber-line:    rgba(246, 196, 84, .26);
-  --red:           #fb7185;
-  --red-bg:        rgba(251, 113, 133, .10);
-  --red-line:      rgba(251, 113, 133, .26);
+  /* Status */
+  --green:         #059669;
+  --green-bg:      rgba(5, 150, 105, .08);
+  --green-line:    rgba(5, 150, 105, .20);
+  --amber:         #d97706;
+  --amber-bg:      rgba(217, 119, 6, .08);
+  --amber-line:    rgba(217, 119, 6, .18);
+  --red:           #e11d48;
+  --red-bg:        rgba(225, 29, 72, .06);
+  --red-line:      rgba(225, 29, 72, .18);
 
-  /* ——— Paper ———
-     Nothing on the source site is white, so the palette never has to bridge
-     that gap. Here a full-height document does, and pure white against this
-     canvas measures 20:1 — the pupil re-adjusts on every glance between the
-     form and the page. The on-screen sheet is therefore toned, and the well
-     around it steps UP in lightness so the eye climbs to it instead of
-     jumping. Exports are untouched and remain pure white. */
-  --paper:         #e7e9ef;
-  /* A mid-slate matte, the way a PDF viewer frames a page. Sitting the sheet
-     on this instead of straight on the canvas turns one 20:1 jump into two
-     gentle ones, so the eye is not re-adjusting on every glance. */
-  --paper-well:    #3d445f;
+  /* ——— Paper ——— */
+  --paper:         #ffffff;
+  --paper-well:    #e8eaef;
 
   /* Shape & depth */
   --r-sm: 8px;
@@ -76,9 +67,9 @@
   --r-lg: 16px;
   --r-xl: 20px;
   --radius: var(--r);
-  --shadow-sm: 0 1px 2px rgba(0,0,0,.5);
-  --shadow:    0 2px 6px rgba(0,0,0,.45), 0 8px 24px rgba(0,0,0,.35);
-  --shadow-lg: 0 8px 20px rgba(0,0,0,.55), 0 24px 60px rgba(0,0,0,.5);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+  --shadow:    0 2px 6px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08);
+  --shadow-lg: 0 8px 20px rgba(0,0,0,.08), 0 24px 60px rgba(0,0,0,.12);
 
   /* Motion — one curve everywhere so the app feels like one object */
   --ease: cubic-bezier(.32, .72, 0, 1);
@@ -102,9 +93,9 @@
   font-feature-settings: 'cv02','cv03','cv04','ss01';
 }
 
-.rb ::selection { background: var(--accent-soft); color: #fff; }
+.rb ::selection { background: rgba(5, 150, 105, .15); color: #111827; }
 
-/* Scrollbars — default light ones are jarring against a dark canvas */
+/* Scrollbars */
 .rb { scrollbar-width: thin; scrollbar-color: var(--border-hi) transparent; }
 .rb::-webkit-scrollbar { width: 10px; height: 10px; }
 .rb::-webkit-scrollbar-track { background: transparent; }
@@ -112,17 +103,15 @@
   background: var(--border-hi); border-radius: 99px;
   border: 3px solid transparent; background-clip: content-box;
 }
-.rb::-webkit-scrollbar-thumb:hover { background: #333a5c; background-clip: content-box; }
+.rb::-webkit-scrollbar-thumb:hover { background: #b0b5c0; background-clip: content-box; }
 
 /* ——— Header ——— */
 .rb .app-header {
-  /* Nearly opaque: the white resume page scrolls underneath, and at lower
-     alpha it washes a bright band across the header. */
-  background: rgba(5, 6, 12, .93);
+  background: rgba(255, 255, 255, .92);
   backdrop-filter: saturate(160%) blur(18px);
   -webkit-backdrop-filter: saturate(160%) blur(18px);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 1px 0 rgba(0,0,0,.28), 0 6px 24px -14px rgba(0,0,0,.5);
+  box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 4px 16px -8px rgba(0,0,0,.08);
   padding: 0 26px;
   display: flex;
   align-items: center;
@@ -166,7 +155,7 @@
   border-bottom: 1px solid var(--border);
   display: flex;
   gap: 2px;
-  background: rgba(5, 6, 12, .93);
+  background: rgba(255, 255, 255, .92);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   position: sticky;
@@ -273,7 +262,7 @@
 .rb input:focus, .rb textarea:focus, .rb select:focus {
   outline: none;
   border-color: var(--border-focus);
-  background: #0b0e14;
+  background: #ffffff;
   box-shadow: var(--accent-ring);
 }
 .rb textarea { resize: vertical; min-height: 74px; line-height: 1.55; }
@@ -398,7 +387,7 @@
 .rb .wr-item.sev-high { border-left-color: var(--red); }
 .rb .wr-item.sev-low { border-left-color: var(--text-faint); }
 .rb .wr-loc { font-size: 10px; color: var(--text-faint); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 5px; font-weight: 600; }
-.rb .wr-before { font-size: 12px; color: var(--text-faint); text-decoration: line-through; text-decoration-color: #3a4060; line-height: 1.5; }
+.rb .wr-before { font-size: 12px; color: var(--text-faint); text-decoration: line-through; text-decoration-color: #d1d5db; line-height: 1.5; }
 .rb .wr-after { font-size: 12px; color: var(--green); margin-top: 3px; line-height: 1.5; }
 .rb .wr-msg { font-size: 11.5px; color: var(--text-mute); margin-top: 5px; line-height: 1.45; }
 .rb .wr-empty { font-size: 12.5px; color: var(--text-mute); line-height: 1.6; }
@@ -425,10 +414,10 @@
   padding: 26px 22px;
   margin-top: 14px;
   overflow: auto;
-  box-shadow: inset 0 1px 10px rgba(0,0,0,.3);
+  box-shadow: inset 0 1px 6px rgba(0,0,0,.06);
 }
 .rb #resume-page {
-  box-shadow: 0 3px 12px rgba(0,0,0,.4), 0 16px 44px rgba(0,0,0,.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,.08), 0 12px 32px rgba(0,0,0,.1);
   border-radius: 3px;
 }
 
@@ -478,7 +467,7 @@
   height: 640px; overflow: auto;
   background: var(--paper-well); border-radius: var(--r);
   padding: 14px;
-  box-shadow: inset 0 1px 10px rgba(0,0,0,.3);
+  box-shadow: inset 0 1px 6px rgba(0,0,0,.06);
 }
 .rb .compare-raw-text {
   white-space: pre-wrap; font-family: ui-monospace, 'SF Mono', Menlo, monospace;
@@ -739,7 +728,7 @@
 .rb .tpl-warn {
   background: var(--amber-bg); border: 1px solid var(--amber-line);
   border-radius: var(--r); padding: 10px 13px; margin-top: 12px;
-  font-size: 11.5px; color: #e0bd6d; line-height: 1.6;
+  font-size: 11.5px; color: #92400e; line-height: 1.6;
 }
 .rb .tpl-warn strong { color: var(--amber); font-weight: 620; }
 
@@ -772,7 +761,7 @@
 .rb .jd-row input { margin-top: 2px; accent-color: var(--accent); flex-shrink: 0; }
 .rb .jd-diff-before {
   font-size: 12px; color: var(--text-faint); text-decoration: line-through;
-  text-decoration-color: #3a4060; line-height: 1.5;
+  text-decoration-color: #d1d5db; line-height: 1.5;
 }
 .rb .jd-diff-after { font-size: 12px; color: var(--green); margin-top: 3px; line-height: 1.5; }
 .rb .jd-why { margin-top: 6px; display: flex; gap: 5px; flex-wrap: wrap; }
@@ -947,7 +936,7 @@
 .rb .cl-lock-note {
   background: var(--amber-bg); border: 1px solid var(--amber-line);
   border-radius: var(--r); padding: 13px 14px; margin-bottom: 14px;
-  font-size: 12.5px; color: #e0bd6d; line-height: 1.6;
+  font-size: 12.5px; color: #92400e; line-height: 1.6;
 }
 .rb .cl-lock-note strong { color: var(--amber); }
 
@@ -957,7 +946,7 @@
   border-radius: var(--r); padding: 28px 30px; margin-top: 14px;
   font-family: Georgia, 'Times New Roman', serif; color: #1f2937;
   font-size: 13px; line-height: 1.7;
-  box-shadow: 0 3px 12px rgba(0,0,0,.38);
+  box-shadow: 0 2px 8px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.1);
 }
 .rb .cl-preview.cl-locked { filter: blur(3px); opacity: .5; pointer-events: none; user-select: none; }
 .rb .cl-letterhead { border-bottom: 1.5px solid var(--tpl-accent, #2563eb); padding-bottom: 10px; margin-bottom: 16px; }
@@ -994,7 +983,7 @@
 /* ——— Email gate modal ——— */
 .rb .modal-overlay {
   position: fixed; inset: 0;
-  background: rgba(3, 4, 9, .70);
+  background: rgba(0, 0, 0, .35);
   backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
   display: flex; align-items: center; justify-content: center;
   z-index: 1000; padding: 16px;

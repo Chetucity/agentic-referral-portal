@@ -48,16 +48,16 @@
   color: var(--text-mute);
 }
 .rb .btn-danger-ghost:hover {
-  border-color: #7f2a3a;
-  color: #ff9aa8;
+  border-color: #e11d48;
+  color: #be123c;
 }
 
 /* A strip above the editor when the builder was opened from a referral, so
    the reason you came here does not disappear the moment you start typing. */
 .rb .referral-banner {
   align-items: center;
-  background: linear-gradient(90deg, #10221c, #0c1524);
-  border: 1px solid #1f4d3e;
+  background: linear-gradient(90deg, #ecfdf5, #f0f9ff);
+  border: 1px solid #a7f3d0;
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -105,7 +105,7 @@
 
    The read-only resume view (/resumes/[id]) needs the builder's *document*
    styles — the `.resume-page` rules that make a resume look like a resume —
-   but none of its workspace chrome. `.rb` normally paints the full dark
+   but none of its workspace chrome. `.rb` normally paints the full light
    editor canvas, because it inherits what used to be the standalone app's
    `body` rule. This modifier strips exactly that back out, leaving the
    scoping hook in place so the document rules still match. */
@@ -117,11 +117,9 @@
   min-height: 0;
 }
 
-/* The builder tints its paper (--paper: #e7e9ef) because it sits on a near
-   black canvas, where pure white glares. The read-only view sits on a light
-   page, where the same tint just reads as dirty — so the document goes white
-   there, and drops the fixed 800px page height so a short resume does not
-   trail half a page of emptiness. */
+/* The read-only view sits on a light page; the document goes white there,
+   and drops the fixed 800px page height so a short resume does not trail
+   half a page of emptiness. */
 .rb.rb-doc .resume-page {
   background: #ffffff;
   min-height: 0;
