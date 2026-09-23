@@ -35,6 +35,7 @@ export const users = sqliteTable(
     resumeUrl: text("resume_url"),
     linkedinUrl: text("linkedin_url"),
     bio: text("bio"),
+    suspended: integer("suspended", { mode: "boolean" }).notNull().default(false),
     createdAt: text("created_at").notNull().default(now),
   },
   (t) => ({
@@ -60,6 +61,7 @@ export const companies = sqliteTable(
     logoText: text("logo_text"),
     brandColor: text("brand_color"),
     verified: integer("verified", { mode: "boolean" }).notNull().default(false),
+    suspended: integer("suspended", { mode: "boolean" }).notNull().default(false),
     createdById: text("created_by_id").references(() => users.id),
     createdAt: text("created_at").notNull().default(now),
   },

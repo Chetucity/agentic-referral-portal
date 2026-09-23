@@ -151,6 +151,11 @@ export async function login(
     return { error: "Email or password is incorrect." };
   }
 
+  // Block suspended users from signing in
+  if (user.suspended) {
+    return { error: "Your account has been suspended. Contact support for help." };
+  }
+
   await createSession(user.id);
   redirect("/dashboard");
 }

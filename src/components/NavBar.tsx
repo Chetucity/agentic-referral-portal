@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { eq, and } from "drizzle-orm";
+import { eq, and, count } from "drizzle-orm";
 import { db } from "@/db";
 import { notifications } from "@/db/schema";
 import type { SessionUser } from "@/lib/session";
@@ -41,8 +41,9 @@ export async function NavBar({ user }: { user: SessionUser | null }) {
 
   let unread = 0;
   if (user) {
-    const rows = await db
-      .select({ id: notifications.id })
+    // Use count() instead of fetching all rows — much faster
+    const result = await db
+      .select({ c: count() })
       .from(notifications)
       .where(
         and(
@@ -51,7 +52,7 @@ export async function NavBar({ user }: { user: SessionUser | null }) {
         ),
       )
       .all();
-    unread = rows.length;
+    unread = result[0]?.c ?? 0;
   }
 
   return (
